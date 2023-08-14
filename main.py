@@ -9,7 +9,7 @@ from langchain.prompts import (
 )
 import streamlit as st
 from streamlit_chat import message
-from utils import pinecone
+from utils import *
 
 OPENAI_API_KEY = st.secrets["API"]["OPENAI_API_KEY"]
 
@@ -51,12 +51,12 @@ with textcontainer:
     if query:
         with st.spinner("typing..."):
             conversation_string = get_conversation_string()
-            # st.code(conversation_string)
+            st.code(conversation_string)
             refined_query = query_refiner(conversation_string, query)
             st.subheader("Refined Query:")
             st.write(refined_query)
             context = find_match(refined_query)
-            # print(context)  
+            print(context)  
             response = conversation.predict(input=f"Context:\n {context} \n\n Query:\n{query}")
         st.session_state.requests.append(query)
         st.session_state.responses.append(response) 
