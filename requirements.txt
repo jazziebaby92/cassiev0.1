@@ -3,4 +3,4 @@ streamlit_chat
 langchain
 sentence_transformers
 openai
-pinecone
+pinecone=2.2.0
