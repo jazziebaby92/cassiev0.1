@@ -9,7 +9,7 @@ from langchain.prompts import (
 )
 import streamlit as st
 from streamlit_chat import message
-from utils import *
+from utils import pinecone
 
 OPENAI_API_KEY = st.secrets["API"]["OPENAI_API_KEY"]
 

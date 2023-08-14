@@ -12,7 +12,7 @@ openai.api_key = OPENAI_API_KEY
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 pinecone.init(api_key=PINECONE_API_KEY, environment=PINECONE_ENV)
-index = pinecone.Index('langchain-chatbot')
+index = pinecone.Index(PINECONE_INDEX_NAME)
 
 def find_match(input):
     input_em = model.encode(input).tolist()
