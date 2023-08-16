@@ -22,7 +22,7 @@ def find_match(input):
 def query_refiner(conversation, query):
 
     response = openai.Completion.create(
-    model="text-davinci-003",
+    model="text-embedding-ada-002",
     prompt=f"Given the following user query and conversation log, formulate a question that would be the most relevant to provide the user with an answer from a knowledge base.\n\nCONVERSATION LOG: \n{conversation}\n\nQuery: {query}\n\nRefined Query:",
     temperature=0.7,
     max_tokens=256,
