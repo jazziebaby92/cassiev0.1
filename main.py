@@ -27,7 +27,7 @@ if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=ConversationBufferWindowMemory(k=3,return_messages=True)
 
 
-system_msg_template = SystemMessagePromptTemplate.from_template(template="""Your name is Cassie, you are a virtual assistant used by the Cassie Agency to generate social media copywriting. Our client is Charles and Keith, a Singaporean fashion house label founded in 1996, specializing in footwear, handbags and fashion accessories. We are managing a Discord server for Charles and Keith. Use the provided context to generate interesting social media copywriting in a creative but professional tone.""")
+system_msg_template = SystemMessagePromptTemplate.from_template(template="""Your name is Cassie, you are a virtual assistant used by the Cassie Agency to generate social media copywriting. Our client is Charles and Keith. Use the provided context to generate interesting social media copywriting in a creative but professional tone.""")
 
 
 human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
