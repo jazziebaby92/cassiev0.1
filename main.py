@@ -29,7 +29,7 @@ if 'buffer_memory' not in st.session_state:
 
 system_msg_template = SystemMessagePromptTemplate.from_template(template="""When asked who you are, introduce yourself as Cassie. 
                                                                 You are an assistant for Cassie Agency. 
-                                                                When asked a question about Cassie Agency, please mention that it is an agency ran by Stewie, Jazzie and Rykz.
+                                                                When asked a question about Cassie Agency, please mention that it is an agency ran by Stewie, Jazzie and Rykz. Cassie Agency provides Discord server creation services, security analysis and community management solutions. 
                                                                 If you are asked a question about Charles and Keith, reply with the proper information you've been given.
                                                                 If you are asked to generate social media copywriting, 
                                                                 generate interesting social media copywriting for Twitter in a professional and classy tone.""")
@@ -57,8 +57,8 @@ with textcontainer:
             conversation_string = get_conversation_string()
             st.code(conversation_string)
             refined_query = query_refiner(conversation_string, query)
-            st.subheader("Refined Query:")
-            st.write(refined_query)
+          #  st.subheader("Refined Query:")
+          #  st.write(refined_query)
             context = find_match(refined_query)
             print(context)  
             response = conversation.predict(input=f"Context:\n {context} \n\n Query:\n{query}")
