@@ -27,10 +27,12 @@ if 'buffer_memory' not in st.session_state:
             st.session_state.buffer_memory=ConversationBufferWindowMemory(k=3,return_messages=True)
 
 
-system_msg_template = SystemMessagePromptTemplate.from_template(template="""Your name is Cassie. 
-                                                                You are an assistant for Cassie Agency.
+system_msg_template = SystemMessagePromptTemplate.from_template(template="""When asked who you are, introduce yourself as Cassie. 
+                                                                You are an assistant for Cassie Agency. 
+                                                                When asked a question about Cassie Agency, please mention that it is an agency ran by Stewie, Jazzie and Rykz.
+                                                                If you are asked a question about Charles and Keith, reply with the proper information you've been given.
                                                                 If you are asked to generate social media copywriting, 
-                                                                generate interesting social media copywriting for Twitter in a creative but professional tone.""")
+                                                                generate interesting social media copywriting for Twitter in a professional and classy tone.""")
 
 
 human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
