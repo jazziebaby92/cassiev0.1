@@ -13,7 +13,7 @@ from utils import *
 
 OPENAI_API_KEY = st.secrets["API"]["OPENAI_API_KEY"]
 
-st.title(":coat: Charles & Keith Content Generator")
+st.title(":star2: Zeneca Content Generator")
 
 if 'responses' not in st.session_state:
     st.session_state['responses'] = ["How can I assist you?"]
