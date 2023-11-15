@@ -12,6 +12,7 @@ from streamlit_chat import message
 from utils import *
 
 OPENAI_API_KEY = st.secrets["API"]["OPENAI_API_KEY"]
+openai.api_key = OPENAI_API_KEY
 
 st.title(":star2: Zeneca Content Generator")
 
